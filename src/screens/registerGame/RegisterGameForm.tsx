@@ -16,7 +16,6 @@ export function RegisterGameForm({
   platforms,
   onSubmit,
 }: RegisterGameFormProps) {
-  console.log(platforms);
   return (
     <Formik
       initialValues={initialValues}

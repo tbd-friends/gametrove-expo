@@ -5,6 +5,7 @@ import {
   LatestGamesActionTypes,
   ILatestGame,
 } from "./types";
+import { showMessage } from "react-native-flash-message";
 import Axios from "axios";
 
 export const createLatestGamesMiddleware = (): Middleware => {
@@ -45,6 +46,10 @@ const getLatestGames = (baseUri: string, count: number) => (
       });
     })
     .catch((reason) => {
+      showMessage({
+        message: `${reason.message}: ${baseUri}/games/last/${count}`,
+        type: "warning",
+      });
       dispatch({
         type: LatestGamesActionTypes.GET_LATEST_GAMES_FAILED,
         payload: {

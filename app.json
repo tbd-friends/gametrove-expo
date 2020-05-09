@@ -23,6 +23,8 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "Sample Application",
+    "githubUrl": "https://github.com/tbd-friends/gametrove-expo"
   }
 }
