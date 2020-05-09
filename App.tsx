@@ -1,19 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import "react-native-gesture-handler";
+import { Provider } from "react-redux";
+import { configureStore } from "./src/store/configureStore";
+import { AppRoot } from "./AppRoot";
+
+const store = configureStore();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-    </View>
+    <Provider store={store}>
+      <AppRoot />
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
